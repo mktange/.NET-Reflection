@@ -47,6 +47,11 @@ let testTuple (ty:Type) instance =
   printfn "pop: %d" (someObj?pop :?> int)
 
 
+
+
+
+// Main and helper methods
+
 let waitForKey () =
   printfn "Press any key to continue..."
   Console.ReadKey() |> ignore
