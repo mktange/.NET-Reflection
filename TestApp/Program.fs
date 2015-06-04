@@ -11,7 +11,6 @@ let (?) x prop =
 
 
 
-
 /// Get a simple string
 let testString (ty:Type) instance =
   let func = ty.GetMethod("GetSomeString")
@@ -48,9 +47,9 @@ let testTuple (ty:Type) instance =
   printfn "pop: %d" (someObj?pop :?> int)
 
 
-
-
-
+let waitForKey () =
+  printfn "Press any key to continue..."
+  Console.ReadKey() |> ignore
 
 [<EntryPoint>]
 let main argv = 
@@ -65,13 +64,13 @@ let main argv =
 
 
   testString ty instance
-  Console.ReadKey() |> ignore
+  waitForKey()
 
   testObject ty instance
-  Console.ReadKey() |> ignore
+  waitForKey()
   
   testTuple ty instance
-  Console.ReadKey() |> ignore
+  waitForKey()
 
   0
 
