@@ -23,28 +23,33 @@ namespace TestLibrary
     public class MainClass
     {
         string someString;
-        TransferClass someClass;
+        TransferClass someObject;
 
         public MainClass() {
             this.someString = "Here is a simple string";
 
-            this.someClass = new TransferClass();
+            this.someObject = new TransferClass();
             
-            this.someClass.blah = 1;
-            this.someClass.pop = 1337;
-            this.someClass.Test = "This is a test";
-            this.someClass.Hmm = "Woop";
+            this.someObject.blah = 1;
+            this.someObject.pop = 1337;
+            this.someObject.Test = "This is a test";
+            this.someObject.Hmm = "Woop";
         }
 
 
         public TransferClass GetSomeObject()
         {
-            return this.someClass;
+            return this.someObject;
         }
 
         public string GetSomeString()
         {
             return this.someString;
+        }
+
+        public Tuple<string, TransferClass> GetSomeTuple()
+        {
+            return new Tuple<string, TransferClass>(this.someString, this.someObject);
         }
     }
 }
